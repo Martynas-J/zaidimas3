@@ -92,7 +92,7 @@ const Page2 = () => {
               } ${intervalColors[value] || ""}`}
             ></div>
             <div
-              className={`absolute inset-0 flex items-center justify-center text-lg font-bold  transition-colors duration-500 ease-in-out ${
+              className={`absolute inset-0 flex items-center justify-center text-lg font-bold  transition-colors duration-1000 ease-in-out ${
                 isSpinning ? " text-transparent" : " text-black"
               }`}
             >
@@ -111,7 +111,7 @@ const Page2 = () => {
           Sukti!
         </button>
         {!isSpinning && winMoney ? (
-          <div className=" absolute inset-16 text-xl font-bold text-gray-800 mt-4">
+          <div className={` ${winMoney > 2 ? " text-[22px] text-lime-700" :""} absolute inset-16 text-xl font-bold text-gray-800 mt-4`} >
             Laimėjote: {winMoney} €
           </div>
         ) : (
