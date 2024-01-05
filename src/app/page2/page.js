@@ -41,7 +41,7 @@ const Page2 = () => {
       setResults(newResults);
       setIntervals(newResults.map(checkIntervals));
       MoneyPlusHandler(newResults);
-    }, 500);
+    }, 5000);
   };
 
   const MoneyPlusHandler = (newResults) => {
@@ -84,22 +84,24 @@ const Page2 = () => {
           isSpinning ? "spinning" : ""
         }`}
       >
-        {intervals.map((value, index) => (
-          <div key={index} className="relative">
-            <div
-              className={`border-teal-500 w-24 h-24 border-t-4 border-b-4 border-solid rounded-full ${
-                isSpinning ? "animate-spin" : ""
-              } ${intervalColors[value] || ""}`}
-            ></div>
-            <div
-              className={`absolute inset-0 flex items-center justify-center text-lg font-bold  transition-colors duration-1000 ease-in-out ${
-                isSpinning ? " text-transparent" : " text-black"
-              }`}
-            >
-              {value}
-            </div>
-          </div>
-        ))}
+{intervals.map((value, index) => (
+  <div key={index} className={`relative animation-delay-${index}`}>
+    <div
+      className={`border-teal-500 w-24 h-24 border-2 border-solid rounded-full ${
+        isSpinning ? "animate-spin" : ""
+      } ${intervalColors[value] || ""}`}
+      style={{ animationDelay: `${index * 1}s` }}
+    ></div>
+    <div
+      className={`absolute inset-0 flex items-center justify-center text-lg font-bold  transition-colors duration-1000 ease-in-out ${
+        isSpinning ? " text-transparent" : " text-black"
+      }`}
+    >
+      {value}
+    </div>
+  </div>
+))}
+
       </div>
       <div className=" relative">
         <button
