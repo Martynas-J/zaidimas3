@@ -232,6 +232,54 @@ const Page2 = () => {
               <div className=" text-[8px]">-1000€</div>
             </div>
           </div>
+
+          <div
+            onClick={money >= 10000 && !isSpinning && multiply == 1  && !buttonClicked ? ()   => autoSpin(10, 10000, 10) : null}
+            className={`w-14 h-14   bg-gradient-to-r from-blue-500 to-blue-200 hover:cursor-pointer hover:xl hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-100 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg  ${
+              money >= 10000 ? "" : "hover:cursor-not-allowed"
+            }`}
+          >
+            <div
+              className={`${
+                money >= 10000 ? "text-gray-800" : "text-red-800  font-bold"
+              }`}
+            >
+              <span className="text-lg">X10</span>
+              <div className=" text-[8px]">-10 000€</div>
+            </div>
+          </div>
+
+          <div
+            onClick={money >= 200000 && !isSpinning && multiply == 1  && !buttonClicked ? ()   => autoSpin(50, 200000, 50) : null}
+            className={`w-14 h-14   bg-gradient-to-r from-blue-500 to-blue-200 hover:cursor-pointer hover:xl hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-100 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg  ${
+              money >= 200000 ? "" : "hover:cursor-not-allowed"
+            }`}
+          >
+            <div
+              className={`${
+                money >= 200000 ? "text-gray-800" : "text-red-800  font-bold"
+              }`}
+            >
+              <span className="text-lg">X50</span>
+              <div className=" text-[8px]">-200 000€</div>
+            </div>
+          </div>
+
+          <div
+            onClick={money >= 500000 && !isSpinning && multiply == 1  && !buttonClicked ? ()   => autoSpin(100, 500000, 100) : null}
+            className={`w-14 h-14   bg-gradient-to-r from-blue-500 to-blue-200 hover:cursor-pointer hover:xl hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-100 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg  ${
+              money >= 500000 ? "" : "hover:cursor-not-allowed"
+            }`}
+          >
+            <div
+              className={`${
+                money >= 500000 ? "text-gray-800" : "text-red-800  font-bold"
+              }`}
+            >
+              <span className="text-lg">X100</span>
+              <div className=" text-[8px]">-500 000€</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
